@@ -261,8 +261,8 @@ function clearContent(){
 const url = new URL(window.location.href);
 const key = url.searchParams.get('key');
     if (key) {
-            $("#apiKey").val(key);
-            $("#apiKey").hide();
+            $("AIzaSyDMkFeQCInuGBYKPIum3K95Y2uMQSd60Hg").val(key);
+            $("AIzaSyDMkFeQCInuGBYKPIum3K95Y2uMQSd60Hg").hide();
     }	
 const chatbox = $("#chatbox");
 const userInput = $("#userInput");
@@ -350,9 +350,9 @@ const displaytext = window.markdownit().render(message);
 
 
 function fetchreply(message,base64String) {
-		const apiKey = $("#apiKey").val();
+		const apiKey = $("AIzaSyDMkFeQCInuGBYKPIum3K95Y2uMQSd60Hg").val();
 		var settings = {
-  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision:generateContent?key=AIzaSyDEhEaQzl0AAlRwbfOqfpxAGtbY-lqTZE4" + apiKey,
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision:generateContent?key=" + apiKey,
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -381,9 +381,9 @@ $.ajax(settings).done(function(response) { processAjaxResponse(response); })
 }
 	
 function fetchMessages() {
-		const apiKey = $("#apiKey").val();
+		const apiKey = $("AIzaSyDMkFeQCInuGBYKPIum3K95Y2uMQSd60Hg").val();
 		var settings = {
-			"url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDEhEaQzl0AAlRwbfOqfpxAGtbY-lqTZE4" + apiKey,
+			"url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + apiKey,
 			"method": "POST",
 			"timeout": 0,
 			"headers": {
